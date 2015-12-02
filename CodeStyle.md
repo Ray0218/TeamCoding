@@ -49,7 +49,7 @@ YHCommentToolbar    // OK，把类型（toolbar）置后
 
 
 ### <a name='naming-method'></a>方法名
-* 以 `alloc`、`copy`、`init`、`mutableCopy`、`new` 开头的方法要注意，它们会改变ARC的行为。[^1]
+* 以 `alloc`、`copy`、`init`、`mutableCopy`、`new` 开头的方法要注意，它们会改变ARC的行为。我们的项目中不要使用`new`创建对象。[^1]
 * 以 `get`、`set` 开头的方法有特殊的意义，不要随意定义。
   1. set 是属性默认的设置方法，如果函数不是为了设置类成员，则不要用 `set` 开头，可用 `setup` 替代。
   2. get 和属性方法无关，但在 Cocoa 中，其标准行为是通过引用传值，而不是直接返回结果的。欲获取变量，直接以变量名为名，如：`userInfomation`，而不是 `getUserInfomation`。
@@ -485,7 +485,7 @@ static const CGFloat kCellHeight = 30;
 ## 写在后面：
 看完这些后，希望你们看下[iOS应用开发之十大坑队友](http://www.iwangke.me/2014/09/04/fuck-your-ios-teamates/)，并在开发过程中注意。同时记住一句话，代码整理就像是个人卫生，你的代码风格能反映出你和你的工作风格。
 
-[项目中的一些问题](Issues.md)
+[项目中的一些问题](StyleIssues.md)
 
 <a name='reference'></a>参考
 ------
